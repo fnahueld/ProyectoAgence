@@ -1,0 +1,35 @@
+<div class="row teal amber lighten-5">
+  <table class="responsive-table">
+    <tr><th>{{nombreconsultor}}</th></tr>
+  </table>
+
+  <table class="responsive-table highlight bordered">
+    <thead>
+      <tr>
+        <th>Periodo</th>
+        <th>Receita Liquida</th>
+        <th>Custo Fixo</th>
+        <th>Comissap</th>
+        <th>Lucro</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let infoconsultor of infoconsultores">
+        <td>{{infoconsultor.MES}}</td>
+        <td>{{infoconsultor.LIQUIDO}}</td>
+        <td>{{infoconsultor.CUSTO_FIXO}}</td>
+        <td>{{infoconsultor.COMISSAO}}</td>
+        <td>{{infoconsultor.LUCRO}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>SALDO</th>
+        <th>{{sumaliquido}}</th>
+        <th>{{sumafijo}}</th>
+        <th>{{sumacomision}}</th>
+        <th>{{sumalucro}}</th>
+      </tr>
+    </thead>
+  </table>
+</div>

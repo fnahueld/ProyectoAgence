@@ -1,0 +1,88 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>{{Agence}}</h1>
+<div class="row">
+  <div class="col-12">
+    <div class="navbar">
+        <nav class="agence">
+          <div class="nav-wraper">
+            <a data-activates="nav-mobile" materialize="sideNav" data-sidenav="left" data-menuwidth="500" data-closeonclick="false" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a routerLink="/agencia">Agencia<i class="material-icons left">insert_drive_file</i></a></li>
+              <li><a routerLink="#">Proyectos</a></li>
+              <li><a routerLink="#">Administrativo<i class="material-icons right"></i></a></li>
+              <li><a routerLink="/comercial">Comercial<i class="material-icons right"></i></a></li>
+              <li><a routerLink="#">Financiero<i class="material-icons right"></i></a></li>
+              <li><a routerLink="#">Usuario<i class="material-icons right"></i></a></li>
+              <li><a routerLink="#">Salir</a></li>
+            </ul>
+          </div>
+        </nav>
+        <ul id="nav-mobile" class="side-nav">
+          <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li class="bold"><a class="collapsible-header  waves-effect waves-teal"></a>
+          <div class="collapsible-body" style="">
+            <ul id="lstProyectoEducativo">
+              <li><a onclick="cargaPagina('quienessomos.php')">Quienes Somos</a></li>
+              <li><a class="dropdown-button" href="#!" data-activates="lstFundamentacion" data-hover="hover" data-alignment="left">Fundamentación<i class="material-icons right">arrow_drop_down</i></a></li>
+              <li class="divider"></li>
+              <li></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Proyecto Educativo</a>
+          <div class="collapsible-body" style="">
+            <ul id="lstFundamentacion">
+              <li><a onclick="cargaPagina('mision.php')" class="sidenav">Misión</a></li>
+              <li><a onclick="cargaPagina('vision.php')">Visión</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Niveles Educativos</a>
+          <div class="collapsible-body" style="">
+            <ul id="lstNivelEducativo">
+              <li><a onclick="cargaPagina('parvularia.php')">Educación Parvularia</a></li>
+              <li><a onclick="cargaPagina('basica.php')">Educación Básica</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Actividades</a>
+          <div class="collapsible-body" style="">
+            <ul id="lstActividades">
+              <li><a onclick="cargaPagina('pedagogicas.php')">Pedagógicas</a></li>
+              <li><a onclick="cargaPagina('extraescolares.php')">Extra-Escolares</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Centro de Padres</a>
+          <div class="collapsible-body" style="">
+            <ul id="lstCentroPadres">
+              <li><a onclick="cargaPagina('reglamento.php')">Reglamento</a></li>
+              <li><a onclick="cargaPagina('directiva.php')">Directiva</a></li>
+              <li><a onclick="cargaPagina('actividades.php')">Actividades</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="bold"><a class="collapsible-header waves-effect waves-teal">Centro de Alumnos</a>
+          <div class="collapsible-body" style="">
+            <ul id="lstCentroAlumnos">
+              <li><a onclick="cargaPagina('reglamentoalumnos.php')">Reglamento</a></li>
+              <li><a onclick="cargaPagina('directivaalumnos.php')">Directiva</a></li>
+              <li><a onclick="cargaPagina('actividadesalumnos.php')">Actividades</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+        </ul>
+  </div>
+  </div>
+</div>
+<div class="row">
+    <router-outlet></router-outlet>
+</div>

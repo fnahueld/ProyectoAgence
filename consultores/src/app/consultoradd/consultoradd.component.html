@@ -1,0 +1,12 @@
+<div class="row teal amber lighten-5">
+   <ul class="collection containerConsultor">
+     <li *ngFor="let consultoradd of consultoresadd" class="collection-item"
+     (click)="delete(consultoradd)">
+       <div class="collapsible-header">
+           <i class="material-icons">keyboard_arrow_left</i>
+           {{consultoradd.no_usuario}}
+           <span class="new badge"></span>
+       </div>
+     </li>
+   </ul>
+</div>

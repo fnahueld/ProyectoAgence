@@ -1,0 +1,6 @@
+/* AppComponent's private CSS styles */
+.containerConsultor
+{
+  height: 250px;
+  overflow-y: scroll;
+}

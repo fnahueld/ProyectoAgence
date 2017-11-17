@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="row teal amber lighten-5">
+   <ul class="collection containerConsultor">
+     <li *ngFor="let consultor of consultores" class="collection-item"
+     (click)="select(consultor)">
+       <div class="collapsible-header">
+           {{consultor.no_usuario}}
+           <i class="material-icons">keyboard_arrow_right</i>
+       </div>
+     </li>
+   </ul>
+</div>

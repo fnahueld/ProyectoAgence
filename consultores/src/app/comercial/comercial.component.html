@@ -1,0 +1,52 @@
+<div class="row teal lighten-5">
+  <div class="col l3 m12 s12  right-align">
+    <h5>Periodo:</h5>
+  </div>
+
+  <div class="col l3 m12 s12">
+    <div class="input-field">
+          <input type="text"
+            #fechainicio placeholder="Hasta AAAA-MM-DD"/>
+    </div>
+  </div>
+
+
+  <div class="col l3 m12 s12">
+    <div class="input-field">
+          <input type="text"
+            #fechafin placeholder="Hasta AAAA-MM-DD"/>
+    </div>
+  </div>
+
+  <div class="col l3 m12 s12">
+  </div>
+</div>
+
+<div class="row lime lighten-4">
+  <div class="col l3 m12 s12 right-align">
+    <h5>Consultores:</h5>
+  </div>
+  <div class="col l3 m12 s12">
+    <app-consultor>
+    </app-consultor>
+  </div>
+  <div class="col l3 m12 s12">
+    <app-cosultoradd>
+    </app-cosultoradd>
+  </div>
+  <div class="col l3 m12 s12">
+    <a (click)="getInfoConsultores(fechainicio.value, fechafin.value)" class="waves-effect waves-light btn col s12"><i class="material-icons left">insert_drive_file</i>Ralatorio</a>
+
+    <a class="waves-effect waves-light btn col s12"><i class="material-icons left">insert_chart</i>Grafico</a>
+
+    <a (click)="crateGraficoTorta(fechainicio.value, fechafin.value)" class="waves-effect waves-light btn col s12"><i class="material-icons left">pie_chart</i>Pizza</a>
+  </div>
+</div>
+<app-content>
+
+</app-content>
+<ng-template #container>
+</ng-template>
+
+<ng-template #container1>
+</ng-template>

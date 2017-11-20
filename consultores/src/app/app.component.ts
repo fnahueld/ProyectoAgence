@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Consultor } from './consultor/consultor.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ViewContainerRef, ComponentFactory,
          NgModule, Type, Compiler } from '@angular/core';
-import { MaterializeModule  } from 'angular2-materialize';
 import {Observable} from 'rxjs/Rx';
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
@@ -34,6 +33,9 @@ export class ComercialComponent implements OnInit {
 
   constructor(private consultorService: ConsultorService, private compiler: Compiler ) { }
 
+  ngOnInit() {
+  }
+
   getInfoConsultores(fechainicio:string, fechafin:string): void {
     //Pintar en componente content, dinamicamente, componentes info consultores
       this.viewContainer.clear();
@@ -42,8 +44,8 @@ export class ComercialComponent implements OnInit {
       {
 
         let nombreconsultor = this.viewConsultorAdd.consultoresadd[index].no_usuario;
-        Observable.forkJoin(this.consultorService.getinfoConsultores(this.viewConsultorAdd.consultoresadd[index].co_usuario, fechainicio, fechafin)
-        .subscribe(infoconsultores => this.infoconsultores = infoconsultores));
+        this.consultorService.getinfoConsultores(this.viewConsultorAdd.consultoresadd[index].co_usuario, fechainicio, fechafin)
+        .subscribe(infoconsultores => this.infoconsultores = infoconsultores);
 
         this.createComponentFactory(InfoConsultorComponent)
           .then((factory: ComponentFactory<InfoConsultorComponent>) =>
@@ -72,19 +74,19 @@ export class ComercialComponent implements OnInit {
     this.createComponentGraficoFactory(GraficoComponent)
       .then((factory: ComponentFactory<GraficoComponent>) =>
         //this.viewContainer1.createComponent(factory),
-        this.addItemGrafico(factory, this.graficoNombres, this.graficoNumeros),
+        this.addItemGrafico(factory),
         (err: any) => console.error(err)
     );
   }
 
 
-  addItem (factory:ComponentFactory, nombre:string, infoconsultores:InfoConsultor[], index:integer) {
+  addItem (factory:ComponentFactory<InfoConsultorComponent>, nombre:string, infoconsultores:InfoConsultor[], index:number) {
     let instance  = this.viewContainer.createComponent(factory, index).instance;
     instance.nombreconsultor = nombre;
     instance.infoconsultores = infoconsultores;
   }
 
-  addItemGrafico (factory:ComponentFactory) {
+  addItemGrafico (factory:ComponentFactory<GraficoComponent>) {
     let instance  = this.viewContainer1.createComponent(factory, 0).instance;
     console.log(this.graficoNombres);
     console.log(this.graficoNumeros);

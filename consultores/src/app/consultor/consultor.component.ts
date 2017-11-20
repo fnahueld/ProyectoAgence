@@ -19,12 +19,14 @@ export class ConsultorComponent implements OnInit {
   sistema:number;
   estado:string;
   tipousuario:string;
-  sistema = 1;
-  estado = "S";
-  tipousuario = "1,2,3";
+
 
   ngOnInit() {
-    this.getConsultores(this.sistema, this.estado, this.tipousuario);
+
+    this.sistema = 1;
+    this.estado = "S";
+    this.tipousuario = "1,2,3";
+    this.getConsultores();
 
     this.subscription = this.consultorEvents.delConsultor$.subscribe(
         item => {
@@ -32,8 +34,8 @@ export class ConsultorComponent implements OnInit {
         });
   }
 
-  getConsultores(sistema:number, estado:string, tipousuario:string): void {
-    this.consultorService.getConsultores(sistema, estado, tipousuario)
+  getConsultores(): void {
+    this.consultorService.getConsultores(this.sistema, this.estado, this.tipousuario)
     .subscribe(consultores => this.consultores = consultores);
   }
 

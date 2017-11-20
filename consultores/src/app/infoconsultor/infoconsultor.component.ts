@@ -30,11 +30,10 @@ export class InfoConsultorComponent {
     console.log(this.infoconsultores);
     for(let index = 0; index<this.infoconsultores.length; index++)
     {
-      this.sumaliquido = this.sumaliquido + parseInt(this.infoconsultores[index].LIQUIDO);
+      this.sumaliquido = this.sumaliquido + this.infoconsultores[index].LIQUIDO;
       this.sumafijo = this.sumafijo += this.infoconsultores[index].CUSTO_FIXO;
       this.sumacomision = this.sumacomision += this.infoconsultores[index].COMISSAO;
       this.sumalucro = this.sumalucro += this.infoconsultores[index].LUCRO;
     }
   }
-  console.log(this.sumaliquido);
 }

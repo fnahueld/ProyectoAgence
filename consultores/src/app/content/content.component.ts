@@ -9,5 +9,8 @@ import { FormsModule } from "@angular/forms";
 })
 
 export class ContentComponent implements OnInit {
+  constructor(){}
+  ngOnInit() {
+  }
 
 }
